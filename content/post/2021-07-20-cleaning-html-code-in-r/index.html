@@ -11,7 +11,7 @@ tags: []
 
 
 <p>Working at <a href="https://atlas.ku.edu/">ATLAS</a> involves a lot of student assessment data, including text responses. For certain projects, the data is sent to our team with residual HTML code in the text response strings, for example, <code>It's</code> might appear as <code>It&amp;#39;s</code>, since the HTML code for an apostrophe is denoted by <code>&amp;#39;</code>. To make these responses more readable, it is helpful to clean, or replace, the HTML markup with the equivalent symbols.</p>
-<p>The response data I most recently cleaned contained HTML code and various Unicode numbers, such as <code>U+200B</code>, which represents a zero width space. To clean the HTML code and Unicode numbers from the response strings, I used a combination of the <code>replace_html()</code> function within the <code>textclean</code> package and the <code>HTMLdecode()</code> function within the <code>textutils</code> package. Both functions were needed since there are some Unicode numbers that <code>replace_html()</code> recognizes that <code>HTMLdecode()</code> does not, and there are some HTML symbols that <code>HTMLdecode()</code> recognizes that <code>replace_html()</code> does not.</p>
+<p>The response data I most recently cleaned contained HTML code and various Unicode numbers, such as <code>U+200B</code>, which represents a zero width space. To clean the HTML code and Unicode numbers from the response strings, I used a combination of the <code>replace_html()</code> function within the <code>textclean</code> package and the <code>HTMLdecode()</code> function within the <code>textutils</code> package. Both functions were needed since there are some Unicode numbers that <code>replace_html()</code> recognizes that <code>HTMLdecode()</code> does not, and vice versa.</p>
 <pre class="r"><code>responses &lt;- c(&quot;It&amp;#39;s a beautiful day&quot;, 
                   &quot;I like&amp;nbsp;to go fishing&quot;,
                   &quot;Jack &amp;amp; Jill went up the hill&quot;,
@@ -32,4 +32,10 @@ textclean::replace_html(responses)</code></pre>
            new_readableresponse = textclean::replace_html(new_readableresponse)) %&gt;% 
     openxlsx::write.xlsx(file = newfilename)
 }</code></pre>
-<p>The function accepts one argument, <code>file</code>, which represents the file name. The first line of the function reads in the file (in this case, it is a .csv file), and the second line of the function creates a new file name, which is the same as the original file name, but with a "_noCode.xlsx" suffix. I chose to save the file with an .xlsx extension to avoid any formatting issues which sometimes occur with .csv files.</p>
+<p>The function accepts one argument, <code>file</code>, which represents the file name. The first line of the function reads in the file (in this case, it is a .csv file), and the second line of the function creates a new file name, which is the same as the original file name, but with a "_noCode.xlsx" suffix. I chose to save the file with an .xlsx extension to avoid any formatting issues which sometimes occur with .csv files. The remaining lines in the function apply the <code>HTMLdecode()</code> and <code>replace_html()</code> functions to the <code>response</code> column in the data and save the results in a <code>new_readableresponse</code> column. Lastly, the data is written to a new file.</p>
+<p>To further automate the HTML/Unicode cleaning process, I created a vector of all the files in the folder that needed to be cleaned and passed that vector to the <code>fix_html()</code> function using <code>purrr::map()</code>.</p>
+<pre class="r"><code>filepath &lt;- &quot;S:/Projects/writing/grade9-12/&quot;
+files &lt;- list.files(filepath, full.names = TRUE)
+
+purrr::map(files, fix_html)</code></pre>
+<p>The <code>purrr::map()</code> function is very useful when applying a function to a vector or list. In this case, I applied, or mapped, my newly created function <code>fix_html()</code> to a vector of file names. The final results were new versions of each file that included a new, readable response column without any HTML or Unicode numbers.</p>
