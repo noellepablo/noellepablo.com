@@ -5,6 +5,7 @@ date: '2021-07-20'
 slug: cleaning-html-code-in-r
 categories: []
 tags: []
+twitterImg: post/2021-07-20-cleaning-html-code-in-r/figures/html-cube.png
 ---
 
 Working at [ATLAS](https://atlas.ku.edu/) involves a lot of student assessment data, including text responses. For certain projects, the data are sent to our team with residual HTML code in the text response strings, for example, `It's` might appear as `It&#39;s`, since the HTML code for an apostrophe is denoted by `&#39;`. To make these responses more readable, it is helpful to clean, or replace, the HTML markup with the equivalent symbols.
