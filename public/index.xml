@@ -6,7 +6,16 @@
     <description>Recent content on Noelle paBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 Dec 2016 21:49:57 -0700</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 20 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Cleaning HTML Code in R</title>
+      <link>/2021/07/20/cleaning-html-code-in-r/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/2021/07/20/cleaning-html-code-in-r/</guid>
+      <description>Working at ATLAS involves a lot of student assessment data, including text responses. For certain projects, the data is sent to our team with residual HTML code in the text response strings, for example, It&#39;s might appear as It&amp;amp;#39;s, since the HTML code for an apostrophe is denoted by &amp;amp;#39;. To make these responses more readable, it is helpful to clean, or replace, the HTML markup with the equivalent symbols.</description>
+    </item>
+    
     <item>
       <title>A Plain Markdown Post</title>
       <link>/2016/12/30/a-plain-markdown-post/</link>
