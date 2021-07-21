@@ -3,4 +3,4 @@ date: "2016-05-05T21:48:51-07:00"
 title: About
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+Hello! My name is Noelle Pablo, and I am an assistant psychometrician at [Accessible Teaching, Learning, and Assessment Systems](https://atlas.ku.edu/) at the University of Kansas where I work on the [Dynamic Learning Maps alternate assessment](https://dynamiclearningmaps.org/) and the [Innovations in Science Map, Assessment & Report Technologies project](https://ismart.works/). I completed my B.S. in Statistics at California Polytechnic State University, San Luis Obispo, and I am currently pursuing a M.S. in Applied Statistics, Analytics, and Data Science at the University of Kansas. 
