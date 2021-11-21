@@ -1,0 +1,18 @@
+---
+title: Olympics Shiny App
+author: Noelle Pablo
+date: '2021-11-21'
+slug: olympics-shiny-app
+categories: []
+tags:
+  - shiny
+  - r
+  - olympics
+output:
+  blogdown::html_page:
+    toc: false
+runtime: shiny
+---
+hello testing testing
+
+<iframe height="800" width="100%" frameborder="no" src="https://noelle-pablo.shinyapps.io/olympics-app/"> </iframe>
