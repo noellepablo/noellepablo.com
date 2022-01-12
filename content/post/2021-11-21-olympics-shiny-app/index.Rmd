@@ -17,4 +17,4 @@ During summer 2021, I took a [data visualization and acquisition course](https:/
 
 <iframe height="800" width="100%" frameborder="no" src="https://noelle-pablo.shinyapps.io/olympics-app/"> </iframe>
 
-The code for my Shiny app can be found on my [GitHub](https://github.com/noellepablo/olympics-app).
+The code for the Shiny app can be found on my [GitHub](https://github.com/noellepablo/olympics-app).
