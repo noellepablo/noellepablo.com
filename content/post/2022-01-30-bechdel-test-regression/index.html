@@ -41,7 +41,8 @@ moviesclean &lt;- movies %&gt;%
   left_join(bechdel, by = c(&quot;imdb&quot; = &quot;imdb_id&quot;,
                             &quot;year&quot;,
                             &quot;title&quot;)) %&gt;% 
-  distinct(year, imdb, title, budget_2013, rated, language, rating) %&gt;% 
+  distinct(year, imdb, title, budget_2013, 
+           rated, language, rating) %&gt;% 
   filter(!is.na(rating) &amp; rating != 0) %&gt;% 
   na.omit() %&gt;% 
   mutate(numlanguages = str_count(language, &quot;\\S+&quot;),
@@ -59,7 +60,8 @@ moviesclean &lt;- movies %&gt;%
          )) %&gt;% 
   filter(rated != &quot;Not Rated&quot;) %&gt;% 
   mutate(mpaa = fct_relevel(rated,
-                            levels = c(&quot;G&quot;, &quot;PG&quot;, &quot;PG-13&quot;, &quot;R&quot;, &quot;NC-17&quot;)),
+                            levels = c(&quot;G&quot;, &quot;PG&quot;, &quot;PG-13&quot;, 
+                                       &quot;R&quot;, &quot;NC-17&quot;)),
          languagecat = as_factor(languagecat),
          logbudget = log2(budget_2013)) %&gt;% 
   dplyr::select(imdb, title, year, budget_2013, 
@@ -69,7 +71,7 @@ moviesclean &lt;- movies %&gt;%
 bdl_model &lt;- VGAM::vglm(bechdelrating ~ logbudget + year + languagecat,
                   family = cumulative(parallel = TRUE),
                   data = moviesclean)</code></pre>
-<table class="table" style="margin-left: auto; margin-right: auto;">
+<table class="table lightable-classic" style="margin-left: auto; margin-right: auto; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:unnamed-chunk-2">Table 1: </span>Six Observations from The Movies Data Set
 </caption>
