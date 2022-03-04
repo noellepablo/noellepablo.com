@@ -68,7 +68,8 @@ moviesclean &lt;- movies %&gt;%
                 logbudget, mpaa, languagecat, bechdelrating) %&gt;% 
   rename(budget2013 = budget_2013) 
 
-bdl_model &lt;- VGAM::vglm(bechdelrating ~ logbudget + year + languagecat,
+bdl_model &lt;- VGAM::vglm(bechdelrating ~ logbudget + year 
+                        + languagecat,
                   family = cumulative(parallel = TRUE),
                   data = moviesclean)</code></pre>
 <table class="table lightable-classic" style="margin-left: auto; margin-right: auto; font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
@@ -77,22 +78,22 @@ bdl_model &lt;- VGAM::vglm(bechdelrating ~ logbudget + year + languagecat,
 </caption>
 <thead>
 <tr>
-<th style="text-align:left;font-weight: bold;text-align: center;">
+<th style="text-align:left;">
 Title
 </th>
-<th style="text-align:right;font-weight: bold;text-align: center;">
+<th style="text-align:right;">
 Bechdel Rating
 </th>
-<th style="text-align:left;font-weight: bold;text-align: center;">
+<th style="text-align:left;">
 Budget ($)
 </th>
-<th style="text-align:right;font-weight: bold;text-align: center;">
+<th style="text-align:right;">
 Language
 </th>
-<th style="text-align:left;font-weight: bold;text-align: center;">
+<th style="text-align:left;">
 Year
 </th>
-<th style="text-align:right;font-weight: bold;text-align: center;">
+<th style="text-align:right;">
 MPAA Rating
 </th>
 </tr>

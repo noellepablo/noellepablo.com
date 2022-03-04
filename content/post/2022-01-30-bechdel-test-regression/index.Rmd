@@ -76,7 +76,8 @@ moviesclean <- movies %>%
                 logbudget, mpaa, languagecat, bechdelrating) %>% 
   rename(budget2013 = budget_2013) 
 
-bdl_model <- VGAM::vglm(bechdelrating ~ logbudget + year + languagecat,
+bdl_model <- VGAM::vglm(bechdelrating ~ logbudget + year 
+                        + languagecat,
                   family = cumulative(parallel = TRUE),
                   data = moviesclean)
 ```
@@ -97,8 +98,7 @@ moviesclean %>%
   kableExtra::column_spec(column = 2, width = "2cm") %>% 
   kableExtra::column_spec(column = 3, width = "2cm") %>% 
   kableExtra::column_spec(column = 6, width = "2cm") %>% 
-  kableExtra::kable_classic() %>% 
-  kableExtra::row_spec(0, bold = TRUE, align = "c")
+  kableExtra::kable_classic()
 ```
 
 # Results
