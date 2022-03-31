@@ -1,0 +1,43 @@
+---
+title: 'Principal Components Analysis in R: Collegiate Sports'
+author: Noelle Pablo
+date: '2022-03-30'
+slug: principal-components-analysis-collegiate-sports
+categories: []
+tags:
+  - pca
+  - dimension reduction
+  - principal components analysis
+  - collegiate sports
+---
+
+```{r include=FALSE}
+library(tidyverse)
+knitr::opts_chunk$set(message = F,
+                      warning = F)
+```
+testing 1 2 3
+
+```{r}
+tuesdata <-
+  tidytuesdayR::tt_load('2022-03-29')
+sports <- tuesdata$sports %>%
+  select_if(is.numeric) %>%
+  select(-sportscode)
+
+sports_corr <- round(cor(sports, use = "complete.obs"), 2) %>%
+  reshape2::melt()
+
+sports_corr %>%
+  ggplot(aes(Var1, Var2, fill = value)) +
+  geom_tile() +
+  geom_text(aes(label = value), color = "white", size = 2) +
+  coord_fixed() +
+  scale_fill_gradient2(low = "#E69F00",
+                       mid = "#56B4E9",
+                       high = "#009E73") +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1)) +
+  labs(x = "", y = "")
+```
+

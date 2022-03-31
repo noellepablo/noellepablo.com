@@ -1,0 +1,40 @@
+---
+title: 'Principal Components Analysis in R: Collegiate Sports'
+author: Noelle Pablo
+date: '2022-03-30'
+slug: principal-components-analysis-collegiate-sports
+categories: []
+tags:
+  - pca
+  - dimension reduction
+  - principal components analysis
+  - collegiate sports
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>testing 1 2 3</p>
+<pre class="r"><code>tuesdata &lt;-
+  tidytuesdayR::tt_load(&#39;2022-03-29&#39;)</code></pre>
+<pre><code>## 
+##  Downloading file 1 of 1: `sports.csv`</code></pre>
+<pre class="r"><code>sports &lt;- tuesdata$sports %&gt;%
+  select_if(is.numeric) %&gt;%
+  select(-sportscode)
+
+sports_corr &lt;- round(cor(sports, use = &quot;complete.obs&quot;), 2) %&gt;%
+  reshape2::melt()
+
+sports_corr %&gt;%
+  ggplot(aes(Var1, Var2, fill = value)) +
+  geom_tile() +
+  geom_text(aes(label = value), color = &quot;white&quot;, size = 2) +
+  coord_fixed() +
+  scale_fill_gradient2(low = &quot;#E69F00&quot;,
+                       mid = &quot;#56B4E9&quot;,
+                       high = &quot;#009E73&quot;) +
+  theme(axis.text.x = element_text(angle = 45,
+                                   hjust = 1)) +
+  labs(x = &quot;&quot;, y = &quot;&quot;)</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
