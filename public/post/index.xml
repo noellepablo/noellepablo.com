@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Noelle paBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Principal Components Analysis in R: Collegiate Sports Budgets</title>
+      <link>/2022/03/30/principal-components-analysis-in-r-collegiate-sports-budgets/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/03/30/principal-components-analysis-in-r-collegiate-sports-budgets/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>An Investigation of the Bechdel Test Using Logistic Regression</title>
+      <link>/2022/01/30/bechdel-test-regression/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/2022/01/30/bechdel-test-regression/</guid>
+      <description>IntroductionLast spring, I took a categorical data analysis course at the University of Kansas as part of the Applied Statistics, Analytics, and Data Science graduate program. For our final project, we were asked to find a data set, form a research question, and conduct a series of analyses to answer that research question. While looking for inspiration for my final project, I found a Bechdel test data set containing the Bechdel test ratings for films released between 1970 and 2013 on the Tidy Tuesday weekly data project which was originally used in a FiveThirtyEight article titled The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.</description>
+    </item>
+    
     <item>
       <title>Olympics Shiny App</title>
       <link>/2021/11/21/olympics-shiny-app/</link>

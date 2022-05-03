@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Noelle paBlog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 30 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bechdel test</title>
+      <link>/tags/bechdel-test/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/bechdel-test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>categorical data</title>
+      <link>/tags/categorical-data/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/categorical-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logistic regression</title>
+      <link>/tags/logistic-regression/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/logistic-regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tidy tuesday</title>
+      <link>/tags/tidy-tuesday/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/tidy-tuesday/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>olympics</title>
       <link>/tags/olympics/</link>
