@@ -76,4 +76,4 @@ The principal component scores are saved in the `x` element of the `prcomp()` ou
 sports_pc$x[, 1:4]
 ```
 
-If our goal is to reduce the number of predictors in the data, we can use the first four columns of principal component scores as our transformed predictors. These four transformed predictors are now able to explain 93.5% of variability that was present in the original 13 variables. However, it is important to keep in mind that PCA only focuses the linear relationships between the original variables, and any information in nonlinear relationships is not captured. 
+If our goal is to reduce the number of predictors in the data, we can use the first four columns of principal component scores as our transformed predictors. These four transformed predictors are now able to explain 93.5% of variability that was present in the original 13 variables. However, it is important to keep in mind that PCA only focuses on the linear relationships between the original variables, and any information in nonlinear relationships is not captured. 
