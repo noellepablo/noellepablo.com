@@ -48,15 +48,12 @@ sports_corr %>%
        fill = "corr")
 ```
 
-From the heatmap, we can see strong linear correlations between several variables, such as: total number of female students (`ef_female_count`) and total number of male students (`ef_male_count)` (r = 0.94), number of women participants (`partic_women`) and number of male participants (`partic_male`) (r = 0.96), and revenue in USD for men (`rev_men`) and revenue in USD for women (`rev_women`) (r = 0.97). Pairs of variables with a correlation of nearly 1 are those that are used to calculate each other, for example, `total_rev_menwomen` is the sum of `rev_men` and `rev_women`. Let's remove these redundant variables, remake our correlation matrix, and proceed to the next step.
+From the heatmap, we can see strong linear correlations between several variables, such as: total number of female students (`ef_female_count`) and total number of male students (`ef_male_count)` (r = 0.94), number of women participants (`partic_women`) and number of male participants (`partic_male`) (r = 0.96), and revenue in USD for men (`rev_men`) and revenue in USD for women (`rev_women`) (r = 0.97). Pairs of variables with a correlation of nearly 1 are those that are used to calculate each other, for example, `total_rev_menwomen` is the sum of `rev_men` and `rev_women`. Let's remove these redundant variables and proceed to the next step.
 
 ```{r}
 sports_data <- 
   sports %>%
   select(-contains("total"), -contains("sum"))
-
-sports_data_corr <- round(cor(sports_data, use = "complete.obs"), 2) %>%
-  reshape2::melt()
 ```
 
 We can use the `prcomp()` function with the `scale.` argument set to `TRUE` to run our PCA on the normalized data. We can also use the `na.omit()` function to remove missing values. Due to the large amount of missing values in this data set, we are left with 16 complete observations. 

@@ -45,13 +45,10 @@ sports_corr %&gt;%
 Figure 1: College sports data correlation heatmap
 </p>
 </div>
-<p>From the heatmap, we can see strong linear correlations between several variables, such as: total number of female students (<code>ef_female_count</code>) and total number of male students (<code>ef_male_count)</code> (r = 0.94), number of women participants (<code>partic_women</code>) and number of male participants (<code>partic_male</code>) (r = 0.96), and revenue in USD for men (<code>rev_men</code>) and revenue in USD for women (<code>rev_women</code>) (r = 0.97). Pairs of variables with a correlation of nearly 1 are those that are used to calculate each other, for example, <code>total_rev_menwomen</code> is the sum of <code>rev_men</code> and <code>rev_women</code>. Let’s remove these redundant variables, remake our correlation matrix, and proceed to the next step.</p>
+<p>From the heatmap, we can see strong linear correlations between several variables, such as: total number of female students (<code>ef_female_count</code>) and total number of male students (<code>ef_male_count)</code> (r = 0.94), number of women participants (<code>partic_women</code>) and number of male participants (<code>partic_male</code>) (r = 0.96), and revenue in USD for men (<code>rev_men</code>) and revenue in USD for women (<code>rev_women</code>) (r = 0.97). Pairs of variables with a correlation of nearly 1 are those that are used to calculate each other, for example, <code>total_rev_menwomen</code> is the sum of <code>rev_men</code> and <code>rev_women</code>. Let’s remove these redundant variables and proceed to the next step.</p>
 <pre class="r"><code>sports_data &lt;- 
   sports %&gt;%
-  select(-contains(&quot;total&quot;), -contains(&quot;sum&quot;))
-
-sports_data_corr &lt;- round(cor(sports_data, use = &quot;complete.obs&quot;), 2) %&gt;%
-  reshape2::melt()</code></pre>
+  select(-contains(&quot;total&quot;), -contains(&quot;sum&quot;))</code></pre>
 <p>We can use the <code>prcomp()</code> function with the <code>scale.</code> argument set to <code>TRUE</code> to run our PCA on the normalized data. We can also use the <code>na.omit()</code> function to remove missing values. Due to the large amount of missing values in this data set, we are left with 16 complete observations.</p>
 <p>The first four principal components account for 93.5% of the total variability in the original variables, in other words, we can explain most of the variability in the data using four principal components, rather than the original 13 variables.</p>
 <pre class="r"><code>sports_pc &lt;- prcomp(na.omit(sports_data), scale. = TRUE)
