@@ -1,4 +1,3 @@
-# noellepablog
-Noelle Pablo's data science blog
+# noellepablo.com
 
-Hi everyone! This is my personal blog created with the blogdown package in R.
+This is the source code for noellepablo.com, created with the `blogdown` R package. Blog posts can be found in the content/blog/ directory. 
