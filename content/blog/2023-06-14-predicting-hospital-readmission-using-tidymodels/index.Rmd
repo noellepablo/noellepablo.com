@@ -1,0 +1,29 @@
+---
+title: Predicting Hospital Readmission Using Tidymodels
+author: Noelle Pablo
+date: '2023-06-14'
+slug: []
+categories: []
+tags:
+  - tidymodels
+  - machine learning
+  - xgboost
+---
+
+```{r include=FALSE,message=FALSE}
+library(tidymodels)
+```
+
+
+For the last semester of my master's degree in applied statistics and data science, I enrolled in a statistical learning course which covered how and when to apply several important machine learning methods such as mixture models, spline regression, support vector machines, advanced discriminant analysis methods, neural networks. The course culminated with a short project that demonstrated how machine learning can be used for statistical decision support, which is a common task for data scientists.
+
+In this blog post, I will give a brief overview of how I built my decision support system project which aimed to predict the probability of hospital readmission using [patient record data](https://www.hindawi.com/journals/bmri/2014/781670/tab1/). 
+
+```{r}
+
+```
+
+
+I wanted to share one of my project presentations from the last class of my master's program, Statistical Learning II. This project involved building a decision support tool using [patient record data](https://www.hindawi.com/journals/bmri/2014/781670/tab1/) to predict the probability of hospital readmission. I used Shiny to build my decision support tool which featured an XGBoost model that I constructed using the `tidymodels` collection of R packages. In the presentation below, I briefly discuss the steps I took while building my decision support tool, including data pre-processing, feature engineering, and model building. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wx0heSaXN-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
