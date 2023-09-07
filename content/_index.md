@@ -8,7 +8,7 @@ images:
 - img/danielle-artwork-nobackground-square.png
 show_action_link: true
 show_social_links: true
-subtitle: Data Analyst @ ATLAS
+subtitle: 
 text_align_left: false
 title: Noelle Pablo
 type: home
