@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pca on Noelle Pablo</title>
+    <link>https://noellepablo.com/tags/pca/</link>
+    <description>Recent content in pca on Noelle Pablo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://noellepablo.com/tags/pca/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Principal Components Analysis in R: College Sports</title>
+      <link>https://noellepablo.com/blog/principal-components-analysis-collegiate-sports/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/principal-components-analysis-collegiate-sports/</guid>
+      <description>Last fall, I took a multivariate statistics course at the University of Kansas as part of the Applied Statistics, Analytics, and Data Science graduate program. One of the topics covered in the course was principal components analysis (PCA). PCA is commonly used when 1. there are a large number of numerical variables in a data set, and 2. the variables are strongly correlated with each other. After conducting a PCA, the correlated variables can be replaced by a smaller number of uncorrelated variables, known as the principal components.</description>
+    </item>
+    
+  </channel>
+</rss>

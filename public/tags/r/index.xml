@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>r on Noelle Pablo</title>
+    <link>https://noellepablo.com/tags/r/</link>
+    <description>Recent content in r on Noelle Pablo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://noellepablo.com/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lessons from Submitting an R Package to CRAN</title>
+      <link>https://noellepablo.com/blog/2026-06-24-lessons-from-submitting-an-r-package-to-cran/</link>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/2026-06-24-lessons-from-submitting-an-r-package-to-cran/</guid>
+      <description>Note: ratlas was recently archived on CRAN due to a dependency beingremoved. We’re actively working to get it back, but these submission lessonsstill apply!
+Submitting ratlas to CRAN was one of those experiences that makes you a betterR developer. There’s a lot ofback-and-forth, and each round of feedback teaches you something new aboutwriting clean, considerate package code. Here are the lessons that stuck.</description>
+    </item>
+    
+    <item>
+      <title>Highlights from rstudio::conf(2022)!</title>
+      <link>https://noellepablo.com/blog/highlights-from-rstudio-conf-2022/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/highlights-from-rstudio-conf-2022/</guid>
+      <description>I had the pleasure of attending the 2022 R Studio conference last week in Washington D.C. As always, it was filled with incredible workshops taught by highly esteemed instructors, fascinating presentations from R users all over the globe, and of course, great company!
+Reunited with my good friend and former professor, Dr. Shannon Pileggi.
+I wanted to take a moment to reflect on some of the highlights from my experience at the conference:</description>
+    </item>
+    
+    <item>
+      <title>Olympics Shiny App</title>
+      <link>https://noellepablo.com/blog/olympics-shiny-app/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/olympics-shiny-app/</guid>
+      <description>During summer 2021, I took a data visualization and acquisition course at the University of Kansas as part of the Applied Statistics, Analytics, and Data Science graduate program. The final project of the course was to visualize real world data interactively by creating an R Shiny app. While brainstorming ideas for my Shiny app, I found a historical Olympic Games data set from the Tidy Tuesday weekly data project located in the R for Data Science GitHub repository.</description>
+    </item>
+    
+  </channel>
+</rss>

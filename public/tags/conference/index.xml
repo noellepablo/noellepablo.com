@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>conference on Noelle Pablo</title>
+    <link>https://noellepablo.com/tags/conference/</link>
+    <description>Recent content in conference on Noelle Pablo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://noellepablo.com/tags/conference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Highlights from rstudio::conf(2022)!</title>
+      <link>https://noellepablo.com/blog/highlights-from-rstudio-conf-2022/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/highlights-from-rstudio-conf-2022/</guid>
+      <description>I had the pleasure of attending the 2022 R Studio conference last week in Washington D.C. As always, it was filled with incredible workshops taught by highly esteemed instructors, fascinating presentations from R users all over the globe, and of course, great company!
+Reunited with my good friend and former professor, Dr. Shannon Pileggi.
+I wanted to take a moment to reflect on some of the highlights from my experience at the conference:</description>
+    </item>
+    
+  </channel>
+</rss>
