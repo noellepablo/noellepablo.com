@@ -1,0 +1,96 @@
+---
+title: Lessons from Submitting an R Package to CRAN
+author: ''
+date: '2026-06-24'
+slug: []
+categories: []
+tags:
+  - R
+  - CRAN
+  - package development
+description: "What I learned submitting ratlas to CRAN — documentation requirements, example pitfalls, and managing the user environment."
+---
+
+
+
+<p><img src="featured.png" alt="" width="20%" style="display: block; margin: auto;" /></p>
+<blockquote>
+<p><strong>Note:</strong> <code>ratlas</code> was recently archived on CRAN due to a dependency being
+removed. We’re actively working to get it back, but these submission lessons
+still apply!</p>
+</blockquote>
+<p>Submitting <code>ratlas</code> to CRAN was one of those experiences that makes you a better
+R developer. There’s a lot of
+back-and-forth, and each round of feedback teaches you something new about
+writing clean, considerate package code. Here are the lessons that stuck with me.</p>
+<hr />
+<div id="start-with-usethisuse_release_issue" class="section level2">
+<h2>1. Start with <code>usethis::use_release_issue()</code></h2>
+<p>This function sets up a structured checklist that guides you through the release
+process, and it’s the best place to start. It will prompt you to choose a version
+type:</p>
+<ul>
+<li><strong>Major</strong> — A significant change that would be expected to break users’ code. Reserved for significant redesigns.</li>
+<li><strong>Minor</strong> — A minor version update means that new functionality has been added to the package. It might include new functions or improvements to existing functions that are compatible with most existing code.</li>
+<li><strong>Patch</strong> — Patch updates are bug fixes. They solve existing issues but don’t do anything new.</li>
+</ul>
+<p>For an initial release, <code>0.1.0</code> is the standard starting point.</p>
+<hr />
+</div>
+<div id="every-exported-function-needs-return-and-examples" class="section level2">
+<h2>2. Every exported function needs <code>@return</code> and <code>@examples</code></h2>
+<p>CRAN wants clear and comprehensive documentation, no exceptions. Every exported function
+needs a <code>@return</code> tag, even if it doesn’t return anything! For example, <code>set_theme()</code> is a function in my package that doesn’t return anything, so I made sure to specify <code>'None'</code> in the documentation and included examples of usage.</p>
+<hr />
+</div>
+<div id="package-anchors-in-rd-files" class="section level2">
+<h2>3. Package anchors in Rd files</h2>
+<p>CRAN flagged missing anchors in my Rd files early on. The rule: if you’re
+linking to a function that isn’t in your package or base R, you need to specify
+the package. So instead of just <code>discrete_scale()</code>, it should be
+<code>ggplot2::discrete_scale()</code>. A small thing, but CRAN is strict about it.</p>
+<hr />
+</div>
+<div id="watch-out-for-line-breaks-file-paths-and-par-changes" class="section level2">
+<h2>4. Watch out for line breaks, file paths, and <code>par()</code> changes</h2>
+<p>A few environment-related issues came up together:</p>
+<ul>
+<li>A stray line break in an Rd file caused an error in <code>only_if()</code></li>
+<li>Writing to a user’s home directory isn’t allowed. Use <code>tempdir()</code> as the
+default for any temporary files (I fixed this in <code>ggsave2()</code>)</li>
+<li>If your examples change <code>par()</code> settings, reset them afterward so they don’t
+affect the user’s environment</li>
+</ul>
+<hr />
+</div>
+<div id="no-shop-links-in-documentation" class="section level2">
+<h2>5. No shop links in documentation</h2>
+<p>CRAN does not allow links to online stores, such as Amazon. I had originally included a link to the ggplot2 book on Amazon in a vignette, which CRAN flagged. I fixed this
+issue by including a link to the publisher’s page instead.</p>
+<hr />
+</div>
+<div id="dont-use-iffalse-and-examplesif-in-your-examples" class="section level2">
+<h2>6. Don’t use <code>if(FALSE){}</code> and <code>@examplesIf</code> in your examples</h2>
+<p>I had been using <code>@examplesIf</code> (which compiles to <code>if(FALSE){}</code>) to skip examples
+that depended on missing packages. CRAN recommends these preferred
+alternatives:</p>
+<ul>
+<li><code>\dontrun{}</code> — for examples that would genuinely error</li>
+<li><code>\donttest{}</code> — for examples that are long-running or environment-dependent</li>
+</ul>
+<hr />
+</div>
+<div id="but-dont-overuse-dontrun-either" class="section level2">
+<h2>7. But don’t overuse <code>\dontrun{}</code> either</h2>
+<p>CRAN pushes back on <code>\dontrun{}</code> if it seems unnecessary. Their preference is
+that examples actually run, so if <code>\donttest{}</code> is sufficient, use that. For
+functions like <code>ggsave2()</code>, I had to either justify <code>\dontrun{}</code> or switch to
+<code>\donttest{}</code>. The takeaway: CRAN takes running examples very seriously!</p>
+<hr />
+<p>The CRAN review process is thorough by design, which is what makes the repository
+trustworthy. If you’re preparing your own submission, <code>usethis::use_release_issue()</code>
+and <code>devtools::check()</code> will catch a lot before you submit. While the process does come with a learning curve,
+it ultimately pushes you to write cleaner, more reliable code, create thorough documentation, and think carefully about how your work will perform in different user environments.</p>
+<p>Hopefully these reflections make the process a bit smoother for others preparing to take it on, and when CRAN
+does come back with notes, treat each one as a specific, fixable improvement that will strengthen your package not just for yourself, but for the entire community.</p>
+</div>

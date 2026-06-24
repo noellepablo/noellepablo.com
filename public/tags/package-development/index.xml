@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>package development on Noelle Pablo</title>
+    <link>https://noellepablo.com/tags/package-development/</link>
+    <description>Recent content in package development on Noelle Pablo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://noellepablo.com/tags/package-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lessons from Submitting an R Package to CRAN</title>
+      <link>https://noellepablo.com/blog/2026-06-24-lessons-from-submitting-an-r-package-to-cran/</link>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/2026-06-24-lessons-from-submitting-an-r-package-to-cran/</guid>
+      <description>Note: ratlas was recently archived on CRAN due to a dependency beingremoved. We’re actively working to get it back, but these submission lessonsstill apply!
+Submitting ratlas to CRAN was one of those experiences that makes you a betterR developer. There’s a lot ofback-and-forth, and each round of feedback teaches you something new aboutwriting clean, considerate package code. Here are the lessons that stuck with me.</description>
+    </item>
+    
+  </channel>
+</rss>
