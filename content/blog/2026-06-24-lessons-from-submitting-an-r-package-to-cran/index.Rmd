@@ -23,7 +23,7 @@ knitr::include_graphics("featured.png")
 Submitting `ratlas` to CRAN was one of those experiences that makes you a better
 R developer. There's a lot of
 back-and-forth, and each round of feedback teaches you something new about
-writing clean, considerate package code. Here are the lessons that stuck.
+writing clean, considerate package code. Here are the lessons that stuck with me.
 
 ---
 

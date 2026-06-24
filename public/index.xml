@@ -90,7 +90,7 @@ My content section is:collectionMy layout is:single-series part 2!doe
       
       <guid>https://noellepablo.com/blog/2026-06-24-lessons-from-submitting-an-r-package-to-cran/</guid>
       <description>Note: ratlas was recently archived on CRAN due to a dependency beingremoved. We’re actively working to get it back, but these submission lessonsstill apply!
-Submitting ratlas to CRAN was one of those experiences that makes you a betterR developer. There’s a lot ofback-and-forth, and each round of feedback teaches you something new aboutwriting clean, considerate package code. Here are the lessons that stuck.</description>
+Submitting ratlas to CRAN was one of those experiences that makes you a betterR developer. There’s a lot ofback-and-forth, and each round of feedback teaches you something new aboutwriting clean, considerate package code. Here are the lessons that stuck with me.</description>
     </item>
     
     <item>
