@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My Blog on Noelle Pablo</title>
+    <link>https://noellepablo.com/blog/</link>
+    <description>Recent content in My Blog on Noelle Pablo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://noellepablo.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lessons from Submitting an R Package to CRAN</title>
+      <link>https://noellepablo.com/blog/2026-06-24-lessons-from-submitting-an-r-package-to-cran/</link>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/2026-06-24-lessons-from-submitting-an-r-package-to-cran/</guid>
+      <description>Note: ratlas was recently archived on CRAN due to a dependency beingremoved. We’re actively working to get it back, but these submission lessonsstill apply!
+Submitting ratlas to CRAN was one of those experiences that makes you a betterR developer. There’s a lot ofback-and-forth, and each round of feedback teaches you something new aboutwriting clean, considerate package code. Here are the lessons that stuck with me.</description>
+    </item>
+    
+    <item>
+      <title>Predicting Hospital Readmission Using Tidymodels</title>
+      <link>https://noellepablo.com/blog/2023-06-14-predicting-hospital-readmission-using-tidymodels/</link>
+      <pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/2023-06-14-predicting-hospital-readmission-using-tidymodels/</guid>
+      <description>I wanted to share one of my project presentations from the last class of my master’s program, Statistical Learning II. This project involved building a decision support tool using patient record data to predict the probability of hospital readmission. I used Shiny to build my decision support tool which featured an XGBoost model that I constructed using the tidymodels collection of R packages. In the presentation below, I briefly discuss the steps I took while building my decision support tool, including data pre-processing, feature engineering, and model building.</description>
+    </item>
+    
+    <item>
+      <title>Highlights from rstudio::conf(2022)!</title>
+      <link>https://noellepablo.com/blog/highlights-from-rstudio-conf-2022/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/highlights-from-rstudio-conf-2022/</guid>
+      <description>I had the pleasure of attending the 2022 R Studio conference last week in Washington D.C. As always, it was filled with incredible workshops taught by highly esteemed instructors, fascinating presentations from R users all over the globe, and of course, great company!
+Reunited with my good friend and former professor, Dr. Shannon Pileggi.
+I wanted to take a moment to reflect on some of the highlights from my experience at the conference:</description>
+    </item>
+    
+    <item>
+      <title>Principal Components Analysis in R: College Sports</title>
+      <link>https://noellepablo.com/blog/principal-components-analysis-collegiate-sports/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/principal-components-analysis-collegiate-sports/</guid>
+      <description>Last fall, I took a multivariate statistics course at the University of Kansas as part of the Applied Statistics, Analytics, and Data Science graduate program. One of the topics covered in the course was principal components analysis (PCA). PCA is commonly used when 1. there are a large number of numerical variables in a data set, and 2. the variables are strongly correlated with each other. After conducting a PCA, the correlated variables can be replaced by a smaller number of uncorrelated variables, known as the principal components.</description>
+    </item>
+    
+    <item>
+      <title>An Investigation of the Bechdel Test Using Logistic Regression</title>
+      <link>https://noellepablo.com/blog/bechdel-test-regression/</link>
+      <pubDate>Sun, 30 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/bechdel-test-regression/</guid>
+      <description>IntroductionLast spring, I took a categorical data analysis course at the University of Kansas as part of the Applied Statistics, Analytics, and Data Science graduate program. For our final project, we were asked to find a data set, form a research question, and conduct a series of analyses to answer that research question. While looking for inspiration for my final project, I found a Bechdel test data set containing the Bechdel test ratings for films released between 1970 and 2013 on the Tidy Tuesday weekly data project which was originally used in a FiveThirtyEight article titled The Dollar-And-Cents Case Against Hollywood’s Exclusion of Women.</description>
+    </item>
+    
+    <item>
+      <title>Olympics Shiny App</title>
+      <link>https://noellepablo.com/blog/olympics-shiny-app/</link>
+      <pubDate>Sun, 21 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/olympics-shiny-app/</guid>
+      <description>During summer 2021, I took a data visualization and acquisition course at the University of Kansas as part of the Applied Statistics, Analytics, and Data Science graduate program. The final project of the course was to visualize real world data interactively by creating an R Shiny app. While brainstorming ideas for my Shiny app, I found a historical Olympic Games data set from the Tidy Tuesday weekly data project located in the R for Data Science GitHub repository.</description>
+    </item>
+    
+    <item>
+      <title>Cleaning HTML Code in R</title>
+      <link>https://noellepablo.com/blog/cleaning-html-code-in-r/</link>
+      <pubDate>Tue, 20 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/cleaning-html-code-in-r/</guid>
+      <description>Working at ATLAS involves a lot of student assessment data, including text responses. For certain projects, the data are sent to our team with residual HTML code in the text response strings, for example, It&#39;s might appear as It&amp;amp;#39;s, since the HTML code for an apostrophe is denoted by &amp;amp;#39;. To make these responses more readable, it is helpful to clean, or replace, the HTML markup with the equivalent symbols.</description>
+    </item>
+    
+  </channel>
+</rss>

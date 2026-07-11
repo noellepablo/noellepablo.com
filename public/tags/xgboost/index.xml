@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xgboost on Noelle Pablo</title>
+    <link>https://noellepablo.com/tags/xgboost/</link>
+    <description>Recent content in xgboost on Noelle Pablo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 14 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://noellepablo.com/tags/xgboost/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Predicting Hospital Readmission Using Tidymodels</title>
+      <link>https://noellepablo.com/blog/2023-06-14-predicting-hospital-readmission-using-tidymodels/</link>
+      <pubDate>Wed, 14 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://noellepablo.com/blog/2023-06-14-predicting-hospital-readmission-using-tidymodels/</guid>
+      <description>I wanted to share one of my project presentations from the last class of my master’s program, Statistical Learning II. This project involved building a decision support tool using patient record data to predict the probability of hospital readmission. I used Shiny to build my decision support tool which featured an XGBoost model that I constructed using the tidymodels collection of R packages. In the presentation below, I briefly discuss the steps I took while building my decision support tool, including data pre-processing, feature engineering, and model building.</description>
+    </item>
+    
+  </channel>
+</rss>
