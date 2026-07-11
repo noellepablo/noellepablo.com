@@ -2,7 +2,7 @@
 action_label: Read More &rarr;
 action_link: /about
 action_type: text
-description: Hi, I'm Noelle! I am a data analyst with extensive experience in R programming, data analysis, and machine learning. 
+description: Hi, I'm Noelle! I'm a Data Analyst with 7+ years of experience using data, programming, and visualization to solve problems and support decision-making. I enjoy building automated workflows and tools that make complex data more accessible and actionable.
 image_left: true
 images:
 - img/danielle-artwork-nobackground-square.png
