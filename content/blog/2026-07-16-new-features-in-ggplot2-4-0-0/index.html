@@ -1,0 +1,123 @@
+---
+title: New Features in ggplot2 4.0.0
+author: ''
+date: '2026-07-16'
+slug: []
+categories: []
+tags:
+  - ggplot
+  - ggplot2
+  - plotting
+  - visualization
+---
+
+
+
+<p>The ggplot2 package recently had a <a href="https://tidyverse.org/blog/2025/09/ggplot2-4-0-0/">major release</a> that coincided with its 18th anniversary! The ggplot2 4.0.0 release includes dozens of improvements ranging from theme customization and scale enhancements to new geom capabilities. This post highlights a few of the updates that I found particularly useful.</p>
+<div id="themes" class="section level2">
+<h2>Themes</h2>
+<div id="ink-and-paper" class="section level3">
+<h3>Ink and paper</h3>
+<p>Users now have a quick and intuitive way to style plot colors using the paper and ink arguments available in ggplot2 themes. <code>paper</code> controls the background color of the plot, while <code>ink</code> controls the foreground color used for the more informative elements of the plot such as text, lines, and other key visual components. The exact aesthetic associated with ink depends on the type of chart. For a boxplot, the primary foreground element is the box outline, so ink is typically applied through the colour aesthetic. In a histogram, however, the filled bars carry the information, making fill the primary “ink.” Rather than remembering whether a particular geom relies on colour or fill, users can simply think in terms of visual roles: the background (paper) and the most important information (ink).</p>
+<p>In the boxplot and histogram below, the same <code>ink</code> and <code>paper</code> settings are used in both plots. However, the foreground, or <code>ink</code>, information is represented differently in each chart. For the boxplot, the outlines and outliers are the most informative aspect, while for the histogram, the bars carry the information. The <code>ink</code> setting allows themes to adapt to these differences automatically.</p>
+<pre class="r"><code>library(ggplot2)
+
+diamonds |&gt; 
+  ggplot(aes(carat)) +
+  geom_boxplot() +
+  theme_bw(paper = &quot;snow&quot;, ink = &quot;orchid4&quot;)</code></pre>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-1-1.png" alt="In this boxplot, `ink` changes the color of the boxplot outlines and outlier points." width="672" />
+<p class="caption">
+Figure 1: In this boxplot, <code>ink</code> changes the color of the boxplot outlines and outlier points.
+</p>
+</div>
+<pre class="r"><code>ggplot(diamonds, aes(carat)) +
+  geom_histogram() +
+  theme_bw(paper = &quot;snow&quot;, ink = &quot;orchid4&quot;)</code></pre>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" alt="In this histogram, `ink` changes the color of the bars themselves." width="672" />
+<p class="caption">
+Figure 2: In this histogram, <code>ink</code> changes the color of the bars themselves.
+</p>
+</div>
+</div>
+<div id="scales-and-palettes" class="section level3">
+<h3>Scales and Palettes</h3>
+<p>Another enhancement to ggplot2’s theme system is the ability to define default palettes directly within a theme. Previously, color and shape palettes had to be specified separately using scale functions, such as <code>scale_color_continuous()</code> or <code>scale_shape_discrete()</code>. By incorporating palettes into themes, users can control the overall look and feel of their plots in one place, rather than configuring theme settings and color scales separately.</p>
+<pre class="r"><code>iris |&gt;
+  ggplot(aes(
+    x = Petal.Length,
+    y = Petal.Width,
+    shape = Species,
+    colour = Sepal.Length
+  )) +
+  geom_point() +
+  theme_bw() +
+  theme(
+    palette.colour.continuous = c(&quot;mistyrose&quot;, &quot;mediumorchid&quot;),
+    palette.shape.discrete = c(
+      &quot;triangle&quot;,
+      &quot;square open&quot;,
+      &quot;circle&quot;
+    )
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" /></p>
+</div>
+<div id="plot-sizes" class="section level3">
+<h3>Plot Sizes</h3>
+<p>ggplot2 now makes it easier to control the size of plot panels using the <code>panel.widths</code> and <code>panel.heights</code> theme settings. Unlike <code>ggsave(width, height)</code>, which controls the size of the entire plot, these settings control only the plotting area itself. Users can either specify sizes for individual panels or provide a single size for the entire panel area. This is especially useful for faceted plots, where panel dimensions often need to be adjusted independently of the overall figure size.</p>
+<p>The ggplot2 release also introduces a family of theme shortcut helpers that make theme code more readable by grouping related settings. For example, <code>theme_sub_panel()</code> provides a concise alternative to setting <code>panel.widths</code> and <code>panel.heights</code> directly.</p>
+<pre class="r"><code>ggplot(mtcars, aes(mpg, wt)) +
+  geom_point() +
+  facet_grid(. ~ cyl) +
+  theme_bw() +
+  theme(
+    panel.widths = unit(c(4, 3, 2.5), &quot;cm&quot;),
+    panel.heights = unit(5, &quot;cm&quot;)
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" /></p>
+<pre class="r"><code>  # or as a shortcut: +
+  # theme_sub_panel(
+  #   widths = unit(c(4, 3, 2.5), &quot;cm&quot;),
+  #   heights = unit(5, &quot;cm&quot;)
+  # )</code></pre>
+</div>
+</div>
+<div id="secondary-axes" class="section level2">
+<h2>Secondary Axes</h2>
+<p>It is now possible to add a secondary axis to a discrete scale. Previously, secondary axes were only available for continuous position scales. ggplot2 now extends secondary-axis support to discrete scales via <code>dup_axis()</code>, making it easier to add labels and annotations to categorical axes without resorting to custom workarounds.</p>
+<pre class="r"><code>ggplot(PlantGrowth, aes(group, weight)) +
+  geom_boxplot() +
+  theme_bw(paper = &quot;snow&quot;, ink = &quot;orchid4&quot;) +
+  scale_x_discrete(
+    sec.axis = dup_axis(
+      name = &quot;Counts&quot;,
+      breaks = seq_len(length(unique(PlantGrowth$group))),
+      labels = paste0(&quot;n = &quot;, table(PlantGrowth$group))
+    )
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" alt="" width="672" /></p>
+</div>
+<div id="boxplot-customization" class="section level2">
+<h2>Boxplot Customization</h2>
+<p>Boxplots are now more customizable than ever. In addition to outlier styling, <code>geom_boxplot()</code> now lets users control the appearance of the median line, box, whiskers, and staples, including their colours, line types, and widths.</p>
+<pre class="r"><code>ggplot(PlantGrowth, aes(group, weight, color = group)) +
+  geom_boxplot(whisker.linetype = &quot;dashed&quot;,
+               box.color = &quot;dodgerblue&quot;,
+               median.linewidth = 1.5,
+    staplewidth = 0.25, # show staple
+    staple.colour = &quot;grey50&quot;) +
+  scale_x_discrete(
+    sec.axis = dup_axis(
+      name = &quot;Counts&quot;,
+      breaks = seq_len(length(unique(PlantGrowth$group))),
+      labels = paste0(&quot;n = &quot;, table(PlantGrowth$group))
+    )
+  )</code></pre>
+<p><img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" alt="" width="672" /></p>
+</div>
+<div id="final-thoughts" class="section level2">
+<h2>Final Thoughts</h2>
+<p>These are just a few highlights from the ggplot2 4.0.0 release. The update contains many additional improvements and bug fixes that are worth exploring in the <a href="https://ggplot2.tidyverse.org/news/index.html#ggplot2-400">full release notes</a>.</p>
+</div>
